@@ -1,0 +1,26 @@
+$primary-color: #A80000;
+$text-color: #333;
+$background-color: #eee;
+$hover-text-color: white;
+$hover-background-color: #42545C;
+$font-family-primary: Arial, Helvetica, sans-serif;
+
+h2 {
+  color: $primary-color;
+  font-family: $font-family-primary;
+  font-weight: lighter;
+}
+
+.clear {
+  color: $text-color;
+  background-color: $background-color;
+  margin-bottom: 12px;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+
+  &:hover {
+    color: $hover-text-color;
+    background-color: $hover-background-color;
+  }
+}
