@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {
   NgIf,
-  UpperCasePipe, NgForOf,
+  UpperCasePipe, NgForOf, Location,
 } from '@angular/common';
 import {FormsModule} from '@angular/forms';
 
 import {Hero} from '../hero';
 import {HeroDetailComponent} from "../hero-detail/hero-detail.component";
 import { HeroService } from '../hero.service';
-import {MessageService} from "../message.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   standalone: true,
@@ -20,27 +20,29 @@ import {MessageService} from "../message.service";
     UpperCasePipe,
     NgIf,
     NgForOf,
-    HeroDetailComponent
+    HeroDetailComponent,
+    RouterLink
   ]
 })
 
 export class HeroesComponent implements OnInit {
-  constructor(private heroService: HeroService, private messageService: MessageService) {}
-
   heroes: Hero[] = [];
-  selectedHero?: Hero;
+
+  constructor(
+    private heroService: HeroService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
-
   getHeroes(): void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
