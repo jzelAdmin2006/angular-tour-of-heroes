@@ -1,0 +1,81 @@
+$button-background-color: #EEE;
+$button-hover-color: #2c3a41;
+$button-hover-background-color: #e6e6e6;
+$button-active-background-color: #525252;
+$button-active-color: #fafafa;
+$selected-button-background-color: black;
+$selected-button-hover-background-color: #505050;
+$badge-background-color: #405061;
+$badge-color: white;
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+
+  li {
+    display: flex;
+  }
+
+  button {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+    left: 0;
+    background-color: $button-background-color;
+    margin: .5em;
+    padding: 0;
+    border-radius: 4px;
+    display: flex;
+    align-items: stretch;
+    height: 1.8em;
+
+    &:hover {
+      color: $button-hover-color;
+      background-color: $button-hover-background-color;
+      left: .1em;
+    }
+
+    &:active {
+      background-color: $button-active-background-color;
+      color: $button-active-color;
+    }
+
+    &.selected {
+      background-color: $selected-button-background-color;
+      color: white;
+
+      &:hover {
+        background-color: $selected-button-hover-background-color;
+      }
+
+      &:active {
+        background-color: $selected-button-background-color;
+      }
+    }
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: small;
+    color: $badge-color;
+    background-color: $badge-background-color;
+    line-height: 1em;
+    margin-right: .8em;
+    padding: 0.6em 0.7em;
+    border-radius: 2px 0 0 2px;
+    flex: 0 0 auto;
+  }
+
+  .name {
+    align-self: center;
+    flex-grow: 1;
+  }
+
+  .badge, .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
