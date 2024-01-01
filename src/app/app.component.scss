@@ -1,0 +1,56 @@
+$primary-color: #369;
+$secondary-color: #444;
+$text-color: #333;
+$background-color-hover: black;
+$background-color-disabled: #eee;
+$font-primary: Arial, Helvetica, sans-serif;
+$font-secondary: Cambria, Georgia, serif;
+
+h1 {
+  color: $primary-color;
+  font-family: $font-primary;
+  font-size: 250%;
+}
+
+h2, h3 {
+  color: $secondary-color;
+  font-family: $font-primary;
+  font-weight: lighter;
+}
+
+body {
+  margin: 2em;
+
+  &, input[type="text"], button {
+    color: $text-color;
+    font-family: $font-secondary;
+  }
+}
+
+button {
+  background-color: $background-color-disabled;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: $background-color-hover;
+    color: white;
+  }
+
+  &:disabled {
+    background-color: $background-color-disabled;
+    color: #aaa;
+    cursor: auto;
+  }
+}
+
+* {
+  font-family: $font-primary;
+}
